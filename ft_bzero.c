@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 10:22:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/27 11:07:53 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/27 11:11:51 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/09/27 11:45:49 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s){
-    size_t count;
-
-    count = 0;
-    while(s[count] != '\0'){
-        count++;
-    }
-    return count;
+void	ft_bzero(int *s, size_t n){
+	ft_memset(s, 0, n);
 }
-
 // int main(int argc, char **argv){
-//     printf("%lu\n", ft_strlen("holaholaaaaa\n\0"));
-//     printf("%lu", strlen("holaholaaaaa\n\0"));
+// 	char tab[100];
+//     printf("%s\n", ft_bzero(tab,2));
+//     printf("%s", bzero(tab, 2));
 // }
