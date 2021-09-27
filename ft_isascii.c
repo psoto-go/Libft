@@ -6,10 +6,11 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 11:37:29 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/23 11:47:32 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/24 11:21:20 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int     ft_isascii(int c){
     if(c >= 0 && c <= 127)
         return(1);

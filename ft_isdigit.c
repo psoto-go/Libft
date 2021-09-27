@@ -6,10 +6,12 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 10:51:26 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/23 11:17:13 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/24 11:21:14 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include "libft.h"
 int     ft_isdigit(int c){
     if(c >= '0' && c <= '9')
         return(1);

@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 11:48:29 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/24 11:21:23 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/24 10:22:00 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/09/24 13:32:25 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_isprint(int c){
-    if(c >= 32 && c <= 126)
-        return(1);
-    else
-        return(0);
+
+size_t ft_strlen(const char *s){
+    size_t count;
+
+    count = 0;
+    while(s[count] != '\0'){
+        count++;
+    }
+    return count;
+}
+
+int main(int argc, char **argv){
+    printf("%lu\n", ft_strlen("holaholaaaaa\n\0"));
+    printf("%lu", strlen("holaholaaaaa\n\0"));
 }

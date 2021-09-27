@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 11:48:29 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/24 11:21:23 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/24 10:43:33 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/09/24 10:45:33 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-int ft_isprint(int c){
-    if(c >= 32 && c <= 126)
-        return(1);
-    else
-        return(0);
-}
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stdlib.h>
+
+#endif
