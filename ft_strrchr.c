@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 10:22:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/28 14:03:23 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/28 10:30:03 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/09/28 14:04:12 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s){
-    size_t count;
+char	*ft_strrchr(const char *str, int c){
+	int	count;
 
-    count = 0;
-    while(s[count] != '\0'){
-        count++;
-    }
-    return count;
+	count = ft_strlen(str);
+
+	while(count >= 0){
+		if(str[count] == (unsigned char)c)
+			return (str + (count));
+		count--;
+	}
+	return(0);
 }

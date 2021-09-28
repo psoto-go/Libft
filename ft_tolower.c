@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:52:16 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/27 14:55:07 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/28 14:04:38 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,3 @@ int ft_tolower(int ch){
 		ch += 32;
     return ch;
 }
-int main(int argc, char **argv){
-	char ch = 'E';
-	
-    printf("%c\n", ft_tolower(ch));
-    printf("%c", tolower(ch));
-}   

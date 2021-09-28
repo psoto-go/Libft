@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:26:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/27 14:37:53 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/28 14:03:02 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,4 @@ size_t ft_strlcpy(char *destination, const char *source, size_t size){
 	destination[count++] = '\0';
 	return (output);
 
-}
-int main(int argc, char **argv){
-    char src[10] = "coucou";
-	char dest[10];
-
-    printf("%s\n", ft_strlcpy(dest, src, 1));
-    printf("%s\n", strlcpy(dest, src, 1));
 }

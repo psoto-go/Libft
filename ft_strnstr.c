@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 10:22:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/28 14:03:23 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/28 13:19:50 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/09/28 13:54:29 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s){
-    size_t count;
+char *ft_strnstr(const char *haystack, const char *needle, size_t len){
+	
+}
 
-    count = 0;
-    while(s[count] != '\0'){
-        count++;
-    }
-    return count;
+int	main(int argc, char **argv){
+	char tab[100] = "oldstringwwww";
+	char tab2[100] = "stringwwww";
+	// char tab[100];
+	// char tab2[10];
+
+	// printf("%s\n", ft_strnstr(tab, tab2, 15));
+	printf("%s", strnstr(tab, tab2, 15));
+
 }
