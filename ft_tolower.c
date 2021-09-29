@@ -6,14 +6,15 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:52:16 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/28 14:04:38 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:40:32 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int ch){
-    if(ch >= 65 && ch <= 90)
+int	ft_tolower(int ch)
+{
+	if (ch >= 65 && ch <= 90)
 		ch += 32;
-    return ch;
+	return (ch);
 }

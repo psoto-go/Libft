@@ -6,16 +6,17 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:26:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/28 14:03:02 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:33:10 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *destination, const char *source, size_t size){
+size_t	ft_strlcpy(char *destination, const char *source, size_t size)
+{
 	unsigned int	count;
 	unsigned int	output;
-	
+
 	output = 0;
 	if (!destination && !source)
 		return (output);
@@ -31,5 +32,4 @@ size_t ft_strlcpy(char *destination, const char *source, size_t size){
 	}
 	destination[count++] = '\0';
 	return (output);
-
 }

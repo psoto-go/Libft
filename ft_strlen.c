@@ -6,18 +6,18 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:22:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/28 14:03:23 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:37:35 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s){
-    size_t count;
+size_t	ft_strlen(const char *s)
+{
+	size_t	count;
 
-    count = 0;
-    while(s[count] != '\0'){
-        count++;
-    }
-    return count;
+	count = 0;
+	while (s[count] != '\0')
+		count++;
+	return (count);
 }

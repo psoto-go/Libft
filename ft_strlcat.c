@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 11:08:44 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/29 11:39:18 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/29 09:44:34 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/09/29 11:13:05 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
+	size_t	destlen;
+	size_t	srclen;
+	size_t	destfin;
 	size_t	count;
 
+	destlen = strlen(dest);
+	srclen = strlen(src);
+	destfin = destlen;
 	count = 0;
-	while (str1[count] && str2[count] && count < n)
+	if (size <= destlen || size == 0)
+		return (size + srclen);
+	while (count < (size - destlen - 1) && src[count])
 	{
-		if (str1[count] != str2[count])
-			return (str1[count] - str2[count]);
+		dest[destfin] = src[count];
 		count++;
+		destfin++;
 	}
-	if (count < n)
-		return (str1[count] - str2[count]);
-	return (0);
+	dest[destfin] = '\0';
+	return (destlen + srclen);
 }

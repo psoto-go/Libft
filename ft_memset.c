@@ -6,13 +6,14 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 13:45:38 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/28 14:01:10 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:31:58 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t l){
+void	*ft_memset(void *str, int c, size_t l)
+{
 	unsigned char	*temp;
 	size_t			count;
 
