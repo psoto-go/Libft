@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 11:08:44 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/29 12:18:00 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/30 11:50:42 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	size_t	count;
+	size_t	i;
+	size_t	j;
 
-	count = 0;
-	while (str1[count] && str2[count] && count < n)
+	i = 0;
+	j = 0;
+	while (n > j)
 	{
-		if (str1[count] != str2[count])
-			return (str1[count] - str2[count]);
-		count++;
+		if (((unsigned char *)str1)[i] > ((unsigned char *)str2)[i])
+			return (1);
+		else if (((unsigned char *)str1)[i] < ((unsigned char *)str2)[i])
+			return (-1);
+		else if (!((unsigned char *)str1)[i] || !((unsigned char *)str2)[i])
+			return (0);
+		i++;
+		j++;
 	}
-	if (count < n)
-		return (str1[count] - str2[count]);
 	return (0);
 }

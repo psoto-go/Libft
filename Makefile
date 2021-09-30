@@ -6,13 +6,13 @@
 #    By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/29 13:53:43 by psoto-go          #+#    #+#              #
-#    Updated: 2021/09/29 13:58:31 by psoto-go         ###   ########.fr        #
+#    Updated: 2021/09/30 10:03:30 by psoto-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c \
 					ft_strlcat.c ft_strncmp.c ft_atoi.c ft_isalpha.c \
-					ft_memcpy.c  ft_strchr.c  ft_strlcpy.c \
+					ft_memcpy.c  ft_strchr.c  ft_strlcpy.c ft_strnstr.c \
 					ft_tolower.c ft_bzero.c   ft_isascii.c ft_memcpy.c \
 					ft_memmove.c ft_strlen.c  ft_strrchr.c \
 					ft_toupper.c ft_isdigit.c ft_memchr.c  ft_memset.c

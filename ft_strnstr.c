@@ -6,23 +6,26 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 13:19:50 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/29 12:17:19 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/09/30 14:21:02 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len){
-	
+	while(haystack && needle && len){
+		return((char *)haystack);
+	}
+	return((char *)haystack);
 }
 
-int	main(int argc, char **argv){
-	char tab[100] = "oldstringwwww";
-	char tab2[100] = "stringwwww";
-	// char tab[100];
-	// char tab2[10];
+// int	main(int argc, char **argv){
+// 	char tab[100] = "oldstringwwww";
+// 	char tab2[100] = "stringwwww";
+// 	// char tab[100];
+// 	// char tab2[10];
 
-	// printf("%s\n", ft_strnstr(tab, tab2, 15));
-	printf("%s", strnstr(tab, tab2, 15));
+// 	// printf("%s\n", ft_strnstr(tab, tab2, 15));
+// 	printf("%s", strnstr(tab, tab2, 15));
 
-}
+// }
