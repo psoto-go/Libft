@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 14:55:49 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/05 10:35:18 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/05 13:49:43 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/05 13:50:02 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			sum;
-	unsigned char	*aux;
-	size_t			count;
-
-	sum = num * size;
-	aux = malloc(sum);
-	count = 0;
-	if (!aux)
-	{
-		return (NULL);
-	}
-	while (count < sum)
-	{
-		aux[count] = 0;
-		count++;
-	}
-	return (aux);
+	
 }

@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 14:55:49 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/05 10:35:18 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/05 13:23:32 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/05 13:47:05 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			sum;
-	unsigned char	*aux;
-	size_t			count;
+	char		*aux;
+	size_t		count;
+	size_t		i;
 
-	sum = num * size;
-	aux = malloc(sum);
+	aux = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	count = 0;
-	if (!aux)
-	{
+	i = 0;
+	if (!aux || !s1 || !s2)
 		return (NULL);
-	}
-	while (count < sum)
+	while (count < ft_strlen(s1))
 	{
-		aux[count] = 0;
+		aux[count] = s1[count];
 		count++;
 	}
+	while (i < ft_strlen(s2))
+	{
+		aux[count] = s2[i];
+		count++;
+		i++;
+	}
+	aux[count] = '\0';
 	return (aux);
 }

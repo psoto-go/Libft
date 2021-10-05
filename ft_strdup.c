@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 14:55:49 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/05 10:35:18 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/05 10:39:12 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/05 10:53:17 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_strdup(const char *src)
 {
-	size_t			sum;
-	unsigned char	*aux;
-	size_t			count;
+	char			*aux;
+	size_t			len;
 
-	sum = num * size;
-	aux = malloc(sum);
-	count = 0;
-	if (!aux)
-	{
+	len = ft_strlen(src) + 1;
+	aux = malloc(len);
+	if (aux == NULL)
 		return (NULL);
-	}
-	while (count < sum)
-	{
-		aux[count] = 0;
-		count++;
-	}
+	ft_memcpy(aux, src, len);
 	return (aux);
 }

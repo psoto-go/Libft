@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 14:55:49 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/05 10:35:18 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/05 11:38:59 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/05 13:22:13 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			sum;
-	unsigned char	*aux;
-	size_t			count;
+	unsigned int	i;
+	char			*aux;
+	unsigned int	count;
 
-	sum = num * size;
-	aux = malloc(sum);
+	aux = malloc(len + 1);
 	count = 0;
-	if (!aux)
-	{
+	if (!s || !aux)
 		return (NULL);
-	}
-	while (count < sum)
+	if (start >= ft_strlen(s))
+		start = ft_strlen(s);
+	i = start;
+	while (count < (unsigned int)len && s[i])
 	{
-		aux[count] = 0;
+		aux[count] = s[i];
 		count++;
+		i++;
 	}
+	aux[count] = '\0';
 	return (aux);
 }

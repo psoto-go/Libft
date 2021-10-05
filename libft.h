@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:43:33 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/30 15:13:32 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/05 13:50:15 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,24 @@ char		*ft_strchr(const char *str, int c);
 
 char		*ft_strrchr(const char *str, int c);
 
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
 int			ft_strncmp(const char *str1, const char *str2, size_t n);
 
 void		*ft_memchr(const void *str, int c, size_t n);
 
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
-char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
-
 int			ft_atoi(const char *str);
 
 void		*ft_calloc (size_t num, size_t size);
+
+char		*ft_strdup(const char *src);
+
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+
+char		*ft_strjoin(char const *s1, char const *s2);
+
+char		*ft_strtrim(char const *s1, char const *set);
 
 #endif
