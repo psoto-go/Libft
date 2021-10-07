@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 11:38:59 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 10:01:23 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/07 10:42:54 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/07 12:25:34 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
-	unsigned int	i;
-	char			*aux;
-	unsigned int	count;
-
-	aux = (char *)malloc((len + 1 ) * sizeof(char));
-	count = 0;
-	if (!s || !aux)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		start = ft_strlen(s);
-	i = start;
-	while (count < (unsigned int)len && s[i])
+	if (n)
 	{
-		aux[count] = s[i];
-		count++;
-		i++;
+		return ((char *)'c');
 	}
-	aux[count] = '\0';
-	return (aux);
+	return ((char *)'c');
 }

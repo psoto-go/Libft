@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 13:49:43 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/06 14:20:18 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:51:37 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		c;
 
 	i = 0;
-	count = strlen(s1);
+	count = ft_strlen(s1);
 	j = 0;
 	if (!s1 || !set)
 		return (NULL);

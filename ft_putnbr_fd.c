@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 11:38:59 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 10:01:23 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/07 12:02:08 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/07 12:19:39 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	i;
-	char			*aux;
-	unsigned int	count;
-
-	aux = (char *)malloc((len + 1 ) * sizeof(char));
-	count = 0;
-	if (!s || !aux)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		start = ft_strlen(s);
-	i = start;
-	while (count < (unsigned int)len && s[i])
+	if (n > -2147483648 || n <= 2147483647)
 	{
-		aux[count] = s[i];
-		count++;
-		i++;
+		if (n == -2147483648)
+		{
+			ft_putchar_fd('-', fd);
+			ft_putchar_fd('2', fd);
+			ft_putnbr_fd(147483648, fd);
+		}
+		else if (n >= 10)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
+		}
+		else if (n < 0)
+		{
+			n = -n;
+			ft_putchar_fd('-', fd);
+			ft_putnbr_fd(n, fd);
+		}
+		else
+		{
+			ft_putchar_fd(n + '0', fd);
+		}
 	}
-	aux[count] = '\0';
-	return (aux);
 }

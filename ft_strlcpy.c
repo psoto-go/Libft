@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:26:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/29 11:33:10 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:46:25 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *destination, const char *source, size_t size)
 	while (source[output] != '\0')
 		output++;
 	if (size == 0)
-		return (output);
+		return (ft_strlen(source));
 	count = 0;
 	while (source[count] != '\0' && count < (size - 1))
 	{

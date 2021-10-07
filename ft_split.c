@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 11:38:59 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 10:01:23 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/07 09:46:25 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/07 10:22:59 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char **ft_split(char const *s, char c)
 {
-	unsigned int	i;
-	char			*aux;
-	unsigned int	count;
+	char	*tmp;
 
-	aux = (char *)malloc((len + 1 ) * sizeof(char));
-	count = 0;
-	if (!s || !aux)
+	tmp = 0;
+	if(!tmp)
 		return (NULL);
-	if (start >= ft_strlen(s))
-		start = ft_strlen(s);
-	i = start;
-	while (count < (unsigned int)len && s[i])
+	if(s && c)
 	{
-		aux[count] = s[i];
-		count++;
-		i++;
+		return((char **)1);
 	}
-	aux[count] = '\0';
-	return (aux);
+	return((char **)1);
 }

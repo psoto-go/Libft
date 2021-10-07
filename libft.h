@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:43:33 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/05 13:50:15 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/07 12:26:55 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
+# include <unistd.h>
 
 int			ft_isalpha(int c);
 
@@ -68,5 +69,21 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 
 char		*ft_strtrim(char const *s1, char const *set);
+
+char		**ft_split(char const *s, char c);
+
+char		*ft_itoa(int n);
+
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+void		ft_putchar_fd(char c, int fd);
+
+void		ft_putstr_fd(char *s, int fd);
+
+void		ft_putendl_fd(char *s, int fd);
+
+void		ft_putnbr_fd(int n, int fd);
+
+
 
 #endif

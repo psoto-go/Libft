@@ -6,7 +6,7 @@
 #    By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/29 13:53:43 by psoto-go          #+#    #+#              #
-#    Updated: 2021/10/05 13:50:23 by psoto-go         ###   ########.fr        #
+#    Updated: 2021/10/07 12:27:11 by psoto-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_strdup.c \
 					ft_tolower.c ft_bzero.c   ft_isascii.c ft_memcpy.c \
 					ft_memmove.c ft_strlen.c  ft_strrchr.c ft_calloc.c \
 					ft_toupper.c ft_isdigit.c ft_memchr.c  ft_memset.c \
-					ft_substr.c ft_strjoin.c ft_strtrim.c
+					ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
+					ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
 OBJS			= $(SRCS:.c=.o)
 
 BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
