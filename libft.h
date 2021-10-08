@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:43:33 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 12:26:55 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/08 16:59:04 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int			ft_isalpha(int c);
 
@@ -60,7 +66,7 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int			ft_atoi(const char *str);
 
-void		*ft_calloc (size_t num, size_t size);
+void		*ft_calloc(size_t num, size_t size);
 
 char		*ft_strdup(const char *src);
 
@@ -76,6 +82,8 @@ char		*ft_itoa(int n);
 
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+
 void		ft_putchar_fd(char c, int fd);
 
 void		ft_putstr_fd(char *s, int fd);
@@ -84,6 +92,14 @@ void		ft_putendl_fd(char *s, int fd);
 
 void		ft_putnbr_fd(int n, int fd);
 
+t_list		*ft_lstnew(void *content);
 
+void		ft_lstadd_front(t_list **lst, t_list *new);
+
+int			ft_lstsize(t_list *lst);
+
+t_list		*ft_lstlast(t_list *lst);
+
+void		ft_lstadd_back(t_list **lst, t_list *new);	
 
 #endif

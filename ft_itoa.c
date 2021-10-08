@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:42:54 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 12:25:34 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/08 15:57:13 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 char	*ft_itoa(int n)
 {
-	if (n)
-	{
-		return ((char *)'c');
-	}
-	return ((char *)'c');
+	// char	*tmp;
+
+	// tmp = n;
+	if(!n)
+		return(NULL);
+	return(NULL);
 }

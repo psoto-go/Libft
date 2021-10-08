@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 11:38:59 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 10:01:23 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/08 12:48:47 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*aux;
 	unsigned int	count;
 
-	aux = (char *)malloc((len + 1 ) * sizeof(char));
+	if (len > ft_strlen(s))
+		aux = (char *)malloc((ft_strlen(s)) * sizeof(char));
+	else
+		aux = (char *)malloc((len + 1) * sizeof(char));
 	count = 0;
 	if (!s || !aux)
 		return (NULL);
