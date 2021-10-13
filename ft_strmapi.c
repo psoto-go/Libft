@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:44:27 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/08 12:17:36 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/13 14:11:49 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*tmp;
 
 	i = 0;
-	len = ft_strlen(s);
-	tmp = (char *)malloc((len + 1) * sizeof(char));
 	if (!s || !f)
 		return (0);
+	len = ft_strlen(s);
+	tmp = (char *)malloc((len + 1) * sizeof(char));
 	if (!tmp)
 		return (0);
 	while (i < len)

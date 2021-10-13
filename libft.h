@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:43:33 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/08 16:59:04 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/13 11:53:52 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,12 @@ int			ft_lstsize(t_list *lst);
 
 t_list		*ft_lstlast(t_list *lst);
 
-void		ft_lstadd_back(t_list **lst, t_list *new);	
+void		ft_lstadd_back(t_list **lst, t_list *new);
+
+void		ft_lstdelone(t_list *lst, void (*del)(void*));
+
+void		ft_lstclear(t_list **lst, void (*del)(void*));
+
+void		ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif

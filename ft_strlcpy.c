@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:26:00 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 11:46:25 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/13 14:17:36 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcpy(char *destination, const char *source, size_t size)
 	unsigned int	output;
 
 	output = 0;
-	if (!destination && !source)
-		return (output);
 	while (source[output] != '\0')
 		output++;
 	if (size == 0)

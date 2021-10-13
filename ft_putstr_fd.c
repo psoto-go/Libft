@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 10:46:50 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 11:03:08 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/13 14:10:55 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	count;
 
 	count = 0;
+	if (!s || !fd)
+		return ;
 	while (s[count])
 	{
 		write(fd, &s[count], 1);

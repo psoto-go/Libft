@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 13:23:32 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/13 14:16:19 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/13 11:32:41 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/10/13 11:52:54 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char		*aux;
-	size_t		count;
-	size_t		i;
+	t_list	*aux;
 
-	if (!s1 || !s2)
-		return (NULL);
-	aux = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	count = 0;
-	i = 0;
-	if (!aux)
-		return (NULL);
-	while (count < ft_strlen(s1))
+	if (!*lst || !del || !lst)
+		return ;
+	while (*lst)
 	{
-		aux[count] = s1[count];
-		count++;
+		aux = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = aux;
 	}
-	while (i < ft_strlen(s2))
-	{
-		aux[count] = s2[i];
-		count++;
-		i++;
-	}
-	aux[count] = '\0';
-	return (aux);
 }

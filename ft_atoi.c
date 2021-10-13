@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 11:59:57 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/09/30 14:50:45 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/13 13:46:42 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_num(const char *str, int i, int s)
 {
-	int	num;
+	unsigned long long	num;
 
 	num = 0;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -22,6 +22,10 @@ int	is_num(const char *str, int i, int s)
 		num = (num * 10) + (int)(str[i] - '0');
 		i++;
 	}
+	if (s != '-' && num > 9223372036854775807)
+		return (-1);
+	if (s == '-' && num > 9223372036854775807)
+		return (0);
 	if (s == '-')
 		return (-num);
 	return (num);

@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 16:45:32 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/08 16:59:19 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/13 14:09:39 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*aux;
 
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
 	aux = ft_lstlast(*lst);
 	aux->next = new;
 }
