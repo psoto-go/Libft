@@ -6,22 +6,100 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:46:25 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/07 10:22:59 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/13 19:32:08 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+static int	count_words(char const *s, char del)
 {
-	char	*tmp;
+	int		c;
+	int		flag;
 
-	tmp = 0;
-	if(!tmp)
-		return (NULL);
-	if(s && c)
+	c = 0;
+	flag = 1;
+	while (*s != '\0')
 	{
-		return((char **)1);
+		if (*s != del)
+			flag = 0;
+		if (*s == del && flag == 0)
+		{
+			flag = 1;
+			c++;
+		}
+		s++;
 	}
-	return((char **)1);
+	if (*(s - 1) != del)
+		c++;
+	return (c);
+}
+
+static char	*split_word(char const *s, char del, int i)
+{
+	int		aux;
+	int		r;
+	char	*word;
+	int		l;
+
+	aux = i;
+	l = 0;
+	r = 0;
+	while (s[i] != del && s[i] != '\0')
+	{
+		i++;
+		l++;
+	}
+	word = (char *)malloc(sizeof(char) * (l + 1));
+	if (!word)
+		return (NULL);
+	while (s[aux] != '\0' && r < l)
+	{
+		word[r] = s[aux];
+		r++;
+		aux++;
+	}
+	word[r] = '\0';
+	return (word);
+}
+
+static void	fill_split(char const *s, char **str, char c)
+{
+	int	i;
+	int	flag;
+	int	r;
+
+	i = 0;
+	flag = 0;
+	r = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c && flag == 0)
+		{
+			str[r] = split_word(s, c, i);
+			flag = 1;
+			r++;
+		}
+		if (s[i] == c)
+			flag = 0;
+		i++;
+	}
+	str[r] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		w;
+	char	**str;
+	int		flag;
+
+	if (!s)
+		return (NULL);
+	flag = 0;
+	w = count_words(s, c);
+	str = (char **)malloc(sizeof(char *) * (w + 1));
+	if (!str)
+		return (NULL);
+	fill_split(s, str, c);
+	return (str);
 }
