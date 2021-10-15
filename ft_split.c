@@ -6,100 +6,88 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 09:46:25 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/10/13 19:32:08 by psoto-go         ###   ########.fr       */
+/*   Updated: 2021/10/15 12:23:17 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *s, char del)
+static	int	count_words(char const *s, char c)
 {
-	int		c;
-	int		flag;
-
-	c = 0;
-	flag = 1;
-	while (*s != '\0')
-	{
-		if (*s != del)
-			flag = 0;
-		if (*s == del && flag == 0)
-		{
-			flag = 1;
-			c++;
-		}
-		s++;
-	}
-	if (*(s - 1) != del)
-		c++;
-	return (c);
-}
-
-static char	*split_word(char const *s, char del, int i)
-{
-	int		aux;
-	int		r;
-	char	*word;
-	int		l;
-
-	aux = i;
-	l = 0;
-	r = 0;
-	while (s[i] != del && s[i] != '\0')
-	{
-		i++;
-		l++;
-	}
-	word = (char *)malloc(sizeof(char) * (l + 1));
-	if (!word)
-		return (NULL);
-	while (s[aux] != '\0' && r < l)
-	{
-		word[r] = s[aux];
-		r++;
-		aux++;
-	}
-	word[r] = '\0';
-	return (word);
-}
-
-static void	fill_split(char const *s, char **str, char c)
-{
-	int	i;
-	int	flag;
-	int	r;
+	int		wlen;
+	int		i;
+	size_t	w;
 
 	i = 0;
-	flag = 0;
-	r = 0;
-	while (s[i] != '\0')
+	wlen = 0;
+	w = 0;
+	while (s[i])
 	{
-		if (s[i] != c && flag == 0)
-		{
-			str[r] = split_word(s, c, i);
-			flag = 1;
-			r++;
-		}
+		if (!wlen && s[i] != c)
+			w++;
 		if (s[i] == c)
-			flag = 0;
+			wlen = 0;
+		else
+			wlen = 1;
 		i++;
 	}
-	str[r] = NULL;
+	return (w);
 }
 
-char	**ft_split(char const *s, char c)
+static	int	len_word(char const *s, char c)
 {
-	int		w;
+	int		i;
+	int		len;
+
+	i = 0;
+	len = 0;
+	while (s[i] == c)
+		i++;
+	while (s[i] != c && s[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+char	**rellena(char const *s, char **des, char c)
+{
+	int		i;
+	int		j;
+	int		k;
+
+	i = -1;
+	j = 0;
+	while (++i < count_words(s, c))
+	{
+		k = 0;
+		des[i] = malloc(sizeof(*s) * (len_word(&s[j], c) + 1));
+		if (!(des[i]))
+			des[i] = NULL;
+		while (s[j] == c)
+			j++;
+		while (s[j] != c && s[j])
+		{
+			des[i][k] = s[j];
+			k++;
+			j++;
+		}
+		des[i][k] = '\0';
+	}
+	des[i] = 0;
+	return (des);
+}
+
+char	**ft_split(const char *s, char c)
+{
 	char	**str;
-	int		flag;
 
 	if (!s)
 		return (NULL);
-	flag = 0;
-	w = count_words(s, c);
-	str = (char **)malloc(sizeof(char *) * (w + 1));
-	if (!str)
+	str = (char **)malloc(sizeof(*str) * (count_words(s, c) + 1));
+	if (!(str))
 		return (NULL);
-	fill_split(s, str, c);
+	str = rellena(s, str, c);
 	return (str);
 }
