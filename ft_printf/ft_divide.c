@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_divide.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 16:11:40 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/12/18 20:49:55 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/11/03 16:03:40 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/11/03 16:09:51 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+char	*ft_divide(unsigned long int n, int mayus, char *string, int len)
 {
-	int	count;
+	int	co;
+	int	i;
 
-	count = 0;
-	while (lst != NULL)
+	co = 0;
+	i = len - 1;
+	while (n != 0)
 	{
-		count++;
-		lst = lst->next;
+		co = n % 16;
+		if (co < 10)
+			co += 48;
+		else if (co >= 10 && mayus == 0)
+			co += 87;
+		else if (co >= 10 && mayus == 1)
+			co += 55;
+		string[i--] = co;
+		n /= 16;
 	}
-	return (count);
+	string[len] = '\0';
+	return (string);
 }

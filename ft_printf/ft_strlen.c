@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 16:11:40 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/12/18 20:49:55 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/24 10:22:00 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/11/03 16:56:10 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+size_t	ft_strlen(const char *s)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
-	while (lst != NULL)
-	{
+	while (s[count] != '\0')
 		count++;
-		lst = lst->next;
-	}
 	return (count);
 }

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_hexalen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 16:11:40 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/12/18 20:49:55 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/11/02 14:09:15 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/11/03 15:09:09 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_hexalen(unsigned long int n)
 {
-	int	count;
+	unsigned long int	co;
+	int					count;
 
-	count = 0;
-	while (lst != NULL)
+	co = 0;
+	count = 1;
+	while (n >= 16)
 	{
+		co = n / 16;
+		n = co;
 		count++;
-		lst = lst->next;
 	}
 	return (count);
 }

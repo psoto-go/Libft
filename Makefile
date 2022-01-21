@@ -6,7 +6,7 @@
 #    By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/29 13:53:43 by psoto-go          #+#    #+#              #
-#    Updated: 2021/10/13 13:58:17 by psoto-go         ###   ########.fr        #
+#    Updated: 2021/12/21 22:52:46 by psoto-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,34 +18,34 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_strdup.c \
 					ft_toupper.c ft_isdigit.c ft_memchr.c  ft_memset.c \
 					ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 					ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-					ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
-OBJS			= $(SRCS:.c=.o)
-
-BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+					ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+					ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 					ft_lstdelone.c ft_lstclear.c ft_lstiter.c
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+OBJS			= $(SRCS:.c=.o)
 
+FT_PRINTF_OBJS	= ./ft_printf/*.o
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
-
 NAME			= libft.a
+FT_PRINTF		= ft_printf
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
-
+				$(MAKE) all -C $(FT_PRINTF)
+				ar rcs $(NAME) $(OBJS) $(FT_PRINTF_OBJS)
+				
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(OBJS)
+				$(MAKE) clean -C ./ft_printf/
 
 fclean:			clean
+				$(MAKE) fclean -C ./ft_printf/
 				$(RM) $(NAME)
 
 re:				fclean $(NAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re

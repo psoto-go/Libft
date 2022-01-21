@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 16:11:40 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/12/18 20:49:55 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/09/27 13:26:00 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/11/03 15:05:57 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+size_t	ft_strlcpy(char *destination, const char *source, size_t size)
 {
-	int	count;
+	unsigned int	count;
+	unsigned int	output;
 
+	output = 0;
+	while (source[output] != '\0')
+		output++;
+	if (size == 0)
+		return (ft_strlen(source));
 	count = 0;
-	while (lst != NULL)
+	while (source[count] != '\0' && count < (size - 1))
 	{
+		destination[count] = source[count];
 		count++;
-		lst = lst->next;
 	}
-	return (count);
+	destination[count++] = '\0';
+	return (output);
 }

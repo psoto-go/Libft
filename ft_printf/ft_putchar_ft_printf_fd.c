@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_ft_printf_fd.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 16:11:40 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/12/18 20:49:55 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/10/07 10:16:07 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/12/21 21:23:52 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_putchar_ft_printf_fd(char c, int fd, int *res)
 {
-	int	count;
-
-	count = 0;
-	while (lst != NULL)
-	{
-		count++;
-		lst = lst->next;
-	}
-	return (count);
+	*res += 1;
+	write(fd, &c, 1);
 }

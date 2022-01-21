@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_write.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 16:11:40 by psoto-go          #+#    #+#             */
-/*   Updated: 2021/12/18 20:49:55 by psoto-go         ###   ########.fr       */
+/*   Created: 2021/11/02 14:08:53 by psoto-go          #+#    #+#             */
+/*   Updated: 2021/11/03 17:21:24 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_write(char *c, int *res, int flag)
 {
-	int	count;
+	char	*aux;
+	int		i;
 
-	count = 0;
-	while (lst != NULL)
+	if (c == NULL)
+		aux = ft_strdup("(null)");
+	else
+		aux = ft_strdup(c);
+	if (!aux)
+		return ;
+	i = 0;
+	while (aux[i] != '\0')
 	{
-		count++;
-		lst = lst->next;
+		write(1, &aux[i], 1);
+		i++;
+		*res += 1;
 	}
-	return (count);
+	free(aux);
+	if (flag == 1)
+		free(c);
 }
