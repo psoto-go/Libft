@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 18:04:37 by psoto-go          #+#    #+#             */
-/*   Updated: 2022/01/24 18:05:03 by psoto-go         ###   ########.fr       */
+/*   Updated: 2022/01/24 18:11:50 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long	is_num(const char *str, int i, int s, int *flag)
 	return (num);
 }
 
-long	ft_atoi(const char *str, int *flag)
+long	ft_atol(const char *str, int *flag)
 {
 	long int	i;
 	long int	s;
