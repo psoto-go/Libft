@@ -6,7 +6,7 @@
 /*   By: psoto-go <psoto-go@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:43:33 by psoto-go          #+#    #+#             */
-/*   Updated: 2022/01/24 18:05:44 by psoto-go         ###   ########.fr       */
+/*   Updated: 2022/01/27 13:54:04 by psoto-go         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include "./ft_printf/ft_printf.h"
+# include "./gnl/get_next_line.h"
 
 typedef struct list
 {
